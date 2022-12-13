@@ -6,6 +6,10 @@ Pracovní název projektu (EFIL pojištění) obsahuje minimální požadavky pr
 2. Úprava pojištěnce
 3. Smazání pojištěnce
 4. Výpis pojištěnců
+5. Vytvoření pojištění
+6. Úprava pojištění
+7. Smazání pojištění
+8. Výpis pojištění
 
 ## Spuštění v lokalním prostředí
 
