@@ -1,7 +1,7 @@
 # ITnetwork závěřečný projekt
 
 ## Popis
-Pracovní název projektu (EFIL pojištění) obsahuje minimální požadavky pro splnění minimálního zadání.
+Pracovní název projektu (EFIL pojištění) obsahuje minimální požadavky pro splnění zadání.
 
 1. Vytvoření pojištěnce
 2. Úprava pojištěnce
