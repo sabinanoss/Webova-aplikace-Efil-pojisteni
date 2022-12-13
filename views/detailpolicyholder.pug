@@ -1,0 +1,57 @@
+extends base
+
+block content
+    main.container
+        section.flex.align-item-center.mb-4 
+            .flex.align-item-center
+                img.mr-4(src='/img/svg/ilu-profil-img.svg')
+                div
+                    .flex.align-item-center
+                        .mr-4 
+                            p.p-grey Jméno pojištěnce 
+                            p.p-primary #{policyholder.firstName} #{policyholder.lastName}
+                        .mr-4 
+                            p.p-grey Trvalé bydliště 
+                            p.p-primary #{policyholder.adress}, #{policyholder.city} #{policyholder.postCode}
+                        .mr-4 
+                            p.p-grey E-mail pojištěnce
+                            p.p-primary #{policyholder.email}
+                    div
+                        p.p-grey.mt-2 Telefon pojištěnce 
+                        p.p-primary +420#{policyholder.phoneNumber}
+        section
+            .flex.align-item-center.section-title
+                h1.title Sjednaná pojištění
+            .data-table.mb-3
+                table 
+                    thead 
+                        tr 
+                            th Pojištění
+                            th Částka
+                            th Platnost od
+                            th Platnost do
+                    tbody
+                        tr 
+                            td 
+                                a(href='#') Životní pojištění
+                            td 15 000 Kč
+                            td 21.12.2022
+                            td 21.12.2023
+                            td 
+                                .flex.align-item-center.justify-content-center 
+                                    a.btn-edit.mr-2(href='')
+                                        img.mr-1(src='/img/svg/ic-edit.svg')
+                                        | Upravit
+                                    a.btn-delete-insurance(href='#')
+                                        img.mr-1(src='/img/svg/ic-delete.svg')
+                                        | Smazat
+            .flex.justify-content-center.align-item-center
+                a.btn-primary.btn-large.mr-2(href='#')
+                    img.mr-1(src='/img/svg/ic-shield.svg')
+                    | Přidat nové pojištění
+                a.btn-blue.btn-large.mr-2(href=`/sprava-pojistencu/edit/${policyholder._id}`)
+                    img.mr-1(src='/img/svg/ic-md-edit.svg')
+                    | Upravit pojištěnce
+                a.btn-red.btn-large#deleteUser(href='#' data-userId=`${policyholder._id}`)
+                    img.mr-1(src='/img/svg/ic-md-delete.svg')
+                    | Smazat pojištěnce

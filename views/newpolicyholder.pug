@@ -1,0 +1,36 @@
+extends base
+
+block content
+    main.container
+        section
+            .flex.align-item-center.section-title 
+                h1.title Vytvoření nového pojištěnce
+            form.form-policyholder(action='/sprava-pojistencu' method='POST')
+                .flex.mb-3
+                    .mr-3
+                        label.form-label(for='userFirstName') Jméno
+                        input.form-input(type='text' id='userFirstName' name='userFirstName' placeholder='Jméno pojištěnce') 
+                    div
+                        label.form-label(for='userLastName') Příjmení
+                        input.form-input(type='text' id='userLastName' name='userLastName' placeholder='Příjmení pojištěnce')
+                .flex.mb-3
+                    .mr-3
+                        label.form-label(for='userEmail') E-mail
+                        input.form-input(type='email' id='userEmail' name='userEmail' placeholder='E-mail pojištěnce') 
+                    div
+                        label.form-label(for='userPhone') Telefon
+                        input.form-input(type='text' id='userPhone' name='userPhone' placeholder='Telefon pojištěnce')
+                .flex.mb-3
+                    .mr-3
+                        label.form-label(for='userAdress') Ulice a číslo popisné
+                        input.form-input(type='text' id='userAdress' name='userAdress' placeholder='Adresa pojištěnce') 
+                    .mr-3
+                        label.form-label(for='userCity') Město
+                        input.form-input(type='text' id='userCity' name='userCity' placeholder='Město pojištěnce')
+                .mb-3
+                    label.form-label(for='userPostCode') PSČ
+                    input.form-input(type='text' id='userPostCode' name='userPostCode' placeholder='PSČ pojištěnce')
+                .flex.justify-content-center
+                    button.btn-large.btn-primary(type='submit')
+                        img.mr-1(src='/img/svg/ic-save.svg')
+                        | Uložit uživatele

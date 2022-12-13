@@ -1,0 +1,20 @@
+extends base
+
+block content
+    main.container
+        section
+            .flex.align-item-center.section-title 
+                h1.title Vytvoření nového pojištění
+            form.form-insurance(action='/sprava-pojisteni' method='POST')
+                .flex.mb-3
+                    .mr-3
+                        label.form-label(for='insuranceName') Název pojištění
+                        input.form-input(type='text' id='insuranceName' name='insuranceName' placeholder='Název pojištění') 
+                .flex.mb-3
+                    .mr-3
+                        label.form-label(for='insuranceType') Typ pojištění
+                        input.form-input(type='text' id='insuranceType' name='insuranceType' placeholder='Typ pojištění (auto, dům..)') 
+                .flex.justify-content-center
+                    button.btn-large.btn-primary(type='submit')
+                        img.mr-1(src='/img/svg/ic-save.svg')
+                        | Uložit pojištění

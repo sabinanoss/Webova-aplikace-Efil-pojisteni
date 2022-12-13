@@ -1,0 +1,35 @@
+extends base
+
+block content 
+    main.container
+        section
+            .flex.align-item-center.section-title 
+                h1.title Správa pojištěnců
+                a.btn.btn-medium.btn-primary(href='/sprava-pojistencu/novy-pojistenec')
+                    img.mr-1(src='img/svg/ic-plus.svg')
+                    | Vytvořit nového pojištěnce
+            .data-table 
+                table 
+                    thead 
+                        tr 
+                            th Jméno a příjmení
+                            th Trvalé bydliště
+                            th Druhy pojištění
+                            th Telefon 
+                    tbody
+
+                        each policyholder in policyholders
+                            tr 
+                                td
+                                    a(href=`/sprava-pojistencu/${policyholder._id}`) #{policyholder.firstName} #{policyholder.lastName}
+                                td #{policyholder.adress}, #{policyholder.city} #{policyholder.postCode}
+                                td Druhy pojištění
+                                td +420#{policyholder.phoneNumber}
+                                td 
+                                    .flex.align-item-center.justify-content-center 
+                                        a.btn-edit.mr-2(href=`/sprava-pojistencu/edit/${policyholder._id}`)
+                                            img.mr-1(src='img/svg/ic-edit.svg')
+                                            | Upravit
+                                        a.btn-delete(href='#' data-userId=`${policyholder._id}`)
+                                            img.mr-1(src='img/svg/ic-delete.svg')
+                                            | Smazat

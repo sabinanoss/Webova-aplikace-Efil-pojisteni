@@ -1,0 +1,31 @@
+extends base
+
+block content
+    main.container
+        section
+            .flex.align-item-center.section-title 
+                h1.title Správa pojištění
+                a.btn.btn-medium.btn-primary(href='/sprava-pojisteni/nove-pojisteni')
+                    img.mr-1(src='/img/svg/ic-plus.svg')
+                    | Vytvořit nové pojištění
+            .data-table 
+                table 
+                    thead 
+                        tr 
+                            th Název pojištění
+                            th Datum vytvoření
+                    tbody
+
+                        each insurance in insurances
+                            tr 
+                                td
+                                    a(href=`/sprava-pojisteni/${insurance._id}`) #{insurance.insuranceName}
+                                td= insurance.createAt.toLocaleString('cz', {day: 'numeric', month: 'numeric', year: 'numeric'})
+                                td 
+                                    .flex.align-item-center.justify-content-center 
+                                        a.btn-edit.mr-2(href=`/sprava-pojisteni/edit/${insurance._id}`)
+                                            img.mr-1(src='/img/svg/ic-edit.svg')
+                                            | Upravit
+                                        a.btn-delete-insurance(href='#'  data-insuranceId=`${insurance._id}`)
+                                            img.mr-1(src='/img/svg/ic-delete.svg')
+                                            | Smazat

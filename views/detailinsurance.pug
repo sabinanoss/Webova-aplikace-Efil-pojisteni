@@ -1,0 +1,26 @@
+extends base
+
+block content
+    main.container
+        section.flex.align-item-center.mb-4 
+            .flex.align-item-center
+                img.mr-4(src='/img/svg/ilu-insurance-img.svg')
+                div
+                    .flex.align-item-center
+                        .mr-4 
+                            p.p-grey Název pojištění 
+                            p.p-primary #{insurance.insuranceName}
+                        .mr-4 
+                            p.p-grey Typ pojištění 
+                            p.p-primary #{insurance.insuranceType}
+                        .mr-4 
+                            p.p-grey Datum vytvoření
+                            p.p-primary= insurance.createAt.toLocaleString('cz', {day: 'numeric', month: 'numeric', year: 'numeric'})
+        section
+            .flex.justify-content-center.align-item-center
+                a.btn-blue.btn-large.mr-2(href=`/sprava-pojisteni/edit/${insurance._id}`)
+                    img.mr-1(src='/img/svg/ic-md-edit.svg')
+                    | Upravit pojištění
+                a.btn-red.btn-large#deleteInsurance(href='#' data-insuranceId=`${insurance._id}`)
+                    img.mr-1(src='/img/svg/ic-md-delete.svg')
+                    | Smazat pojištění

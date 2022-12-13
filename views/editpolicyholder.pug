@@ -1,0 +1,36 @@
+extends base
+
+block content
+    main.container
+        section
+            .flex.align-item-center.section-title 
+                h1.title Úprava pojištěnce: #{policyholder.firstName} #{policyholder.lastName}
+            form.form-policyholder
+                .flex.mb-3
+                    .mr-3
+                        label.form-label(for='userFirstName') Jméno
+                        input.form-input(type='text' id='userFirstName' name='userFirstName' placeholder='Jméno pojištěnce' value=`${policyholder.firstName}`) 
+                    div
+                        label.form-label(for='userLastName') Příjmení
+                        input.form-input(type='text' id='userLastName' name='userLastName' placeholder='Příjmení pojištěnce' value=`${policyholder.lastName}`)
+                .flex.mb-3
+                    .mr-3
+                        label.form-label(for='userEmail') E-mail
+                        input.form-input(type='email' id='userEmail' name='userEmail' placeholder='E-mail pojištěnce'  value=`${policyholder.email}`) 
+                    div
+                        label.form-label(for='userPhone') Telefon
+                        input.form-input(type='text' id='userPhone' name='userPhone' placeholder='Telefon pojištěnce'  value=`${policyholder.phoneNumber}`)
+                .flex.mb-3
+                    .mr-3
+                        label.form-label(for='userAdress') Ulice a číslo popisné
+                        input.form-input(type='text' id='userAdress' name='userAdress' placeholder='Adresa pojištěnce'  value=`${policyholder.adress}`) 
+                    .mr-3
+                        label.form-label(for='userCity') Město
+                        input.form-input(type='text' id='userCity' name='userCity' placeholder='Město pojištěnce'  value=`${policyholder.city}`)
+                .mb-3
+                    label.form-label(for='userPostCode') PSČ
+                    input.form-input(type='text' id='userPostCode' name='userPostCode' placeholder='PSČ pojištěnce'  value=`${policyholder.postCode}`)
+                .flex.justify-content-center
+                    button.btn-large.btn-primary#submitButton(type='submit' data-user-id=`${policyholder.id}`)
+                        img.mr-1(src='/img/svg/ic-save.svg')
+                        | Uložit uživatele
