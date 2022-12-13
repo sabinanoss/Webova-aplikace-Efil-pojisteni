@@ -7,7 +7,7 @@ Pracovní název projektu (EFIL pojištění) obsahuje minimální požadavky pr
 3. Smazání pojištěnce
 4. Výpis pojištěnců
 
-## Spuštění v localním prostředí
+## Spuštění v lokalním prostředí
 
 1. npm i
 2. npm start
