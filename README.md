@@ -1,6 +1,6 @@
-# ITnetwork závěřečný projekt
+# Efil pojištění
 
-Pracovní název projektu (EFIL pojištění) obsahuje minimální požadavky pro splnění zadání.
+Webová aplikace Efil pojištění. Aplikace obsahuje kompletní správu (CRUD).Dané entity jsou uložené v NoSQL databázi MongoDB.
 
 1. Vytvoření pojištěnce
 2. Úprava pojištěnce
